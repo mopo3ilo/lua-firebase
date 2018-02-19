@@ -1,7 +1,19 @@
 local json  = require 'cjson'
 
 tools = {}
-tools.build_query = require('net.url').buildQuery
+
+function tools.build_query(qry)
+  if tools.is_table(qry) then
+    local url = require('socket.url')
+    local str = ''
+    for k, v in pairs(qry) do
+      str = str .. '&' .. url.escape(k) .. '=' .. url.escape(v)
+    end
+    str = str:sub(2)
+    return str
+  end
+  return ''
+end
 
 function tools.split_string(str, sep)
   local t = {}
