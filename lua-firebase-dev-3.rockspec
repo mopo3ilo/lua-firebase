@@ -1,5 +1,5 @@
 package = "lua-firebase"
-version = "dev-2"
+version = "dev-3"
 
 source = {
   url = "git://github.com/mopo3ilo/lua-firebase",
@@ -18,8 +18,7 @@ dependencies = {
   "lua-cjson",
   "luaossl",
   "luasec",
-  "luasocket",
-  "net-url"
+  "luasocket"
 }
 
 build = {
